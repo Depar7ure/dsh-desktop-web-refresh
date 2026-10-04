@@ -1,0 +1,29 @@
+{
+  "name": "dsh-desktop-web-refresh",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "在 DSH Desktop 标题栏（与最小化/还原/关闭同栏）的「编辑」右侧新增蓝底白字伪 3D 的「刷新」按钮，按下即重新加载 DSH Desktop 页面；有对话运行时按钮禁用并弹警告，全静默才允许刷新。",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}
